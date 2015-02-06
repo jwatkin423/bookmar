@@ -1,0 +1,7 @@
+<?php
+
+class Error {
+	function __construct() {
+		echo "You have reached an error, I feel bad for you.";
+	}
+}

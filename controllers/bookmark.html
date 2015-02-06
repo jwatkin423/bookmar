@@ -1,0 +1,14 @@
+<?php
+
+class Bookmark extends Controller {
+
+    function __contruct() {
+        parent::construct();
+        Sessionsah::initSess()
+    }
+
+    public function index(){
+        $this->view->renderView('login/index');
+    }
+
+}
