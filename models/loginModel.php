@@ -3,6 +3,8 @@
 class LoginModel extends Model {
 
 	public function checkCreds($userID, $userPassword) {
+
+		// Prepares the SQL statement check against users in the DB
 		$q = $this->db->prepare("SELECT * FROM users WHERE email = :email AND userpassword = :userpassword");
 		$q->execute([
 			":email" => $userID,
@@ -15,7 +17,8 @@ class LoginModel extends Model {
 			Sessionsah::setSess($rq);
 			header("location: ". URL . "bookmark");
 		} else {
-			header("location: ". URL . "login");
+			header("location: ". URL . "login/badCreds");
+			exit;
 		}
 	}
 

@@ -13,7 +13,6 @@ class BookmarkModel extends Model {
 			":user_id" => $userID
 			]);
 		$rq = $q->fetchAll(PDO::FETCH_ASSOC);
-		var_dump($rq);
 		return $rq;
 	}
 	

@@ -1,9 +1,22 @@
+<?php
+	
+	@$le = $this->loginError;
+
+?>
+
+
+
 <div class="container">
 	<div>
 		<p>Login below: </p>
 	</div>
 	<div class="row">
 		<div class="col-sm-4">
+		<?php 
+			if (!empty($le)) {
+				?>
+				<label class="text-danger"><?php echo $le; ?></label>
+			<?php } ?>
 		<form action="<?php echo URL; ?>login/signIN" method="post">
 			<table class="table table-striped table-bordered table-hover">
 				<tbody>

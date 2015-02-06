@@ -18,14 +18,15 @@ class NewuserModel extends Model {
 		$ceq->execute();
 		$rq = $ceq->fetchAll(PDO::FETCH_ASSOC);
 		foreach($rq as $r) {
-			if ($r == $email) {
+			echo $r['email'];
+			if ($r['email'] == $email) {
 				$emailStatus = false;
+				break;
 			} else {
 				$emailStatus = true;
 			}
 		}
-
-		if ($emailStatus) {
+		if ($emailStatus == true) {
 			$q = $this->db->prepare("INSERT INTO users (name, email, userpassword) values(:name, :email, :userpassword)");
 			$q->execute([
 				":name" => $name,
@@ -34,7 +35,6 @@ class NewuserModel extends Model {
 				]);
 			$arr = $q->errorInfo();
 			if (empty($arr)) {
-				print_r($arr);
 			} else {
 				header("Location: " . URL . "newuser/registered");
 			}

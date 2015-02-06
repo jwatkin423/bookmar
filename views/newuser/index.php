@@ -1,9 +1,20 @@
+<?php
+	
+	@$re = $this->loginError;
+
+?>
+
 <div class="container">
 	<div>
 		<p>Register below: </p>
 	</div>
 	<div class="row">
 		<div class="col-sm-6">
+		<?php
+			if (!empty($re)) {
+				?>
+				<label class="text-danger"><?php echo $re; ?></label>
+			<?php } ?>
 		<form action="<?php echo URL; ?>newuser/createUser" method="post">
 			<table class="table table-striped table-bordered table-hover">
 				<tbody>

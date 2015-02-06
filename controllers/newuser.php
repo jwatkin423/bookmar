@@ -19,6 +19,7 @@ class Newuser extends Controller {
 	}
 
 	public function badEMail() {
+		$this->view->regError = "Email already in use";
 		$this->view->renderView('newuser/badEmail');
 	}
 
