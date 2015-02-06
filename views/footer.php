@@ -5,10 +5,10 @@
 			<div class="col-md-12 text-right">
 				<div class="col-md-8">
 					<div class="col-md-4">
-						<a href="#">Legal mumbo jumbo</a> <a href="#">Careers?</a> 
+						<a href="#">Legal mumbo jumbo</a> <br /> <a href="#">Careers?</a> 
 					</div>
 					<div class="col-md-4">
-						<a href="#"><strong>DON'T</strong>Contact Us</a>  <a href="#">Locations (As if)</a> 
+						<a href="#"><strong>DON'T</strong>Contact Us</a> <br /> <a href="#">Locations (As if)</a> 
 					</div>
 				</div>
 				<div class="col-md-4">

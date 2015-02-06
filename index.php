@@ -1,5 +1,7 @@
 <?php
 
+// ini_set('display_errors',1);
+
 // Library files
 require 'libs/Bootstrap.php';
 require 'libs/Controller.php';

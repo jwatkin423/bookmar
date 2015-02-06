@@ -55,13 +55,19 @@ class BookmarkModel extends Model {
 		$bkTitle = $_POST['bktitle'];
 		$bkUrl = $_POST['bkurl'];
 		$bkID = $_POST['bkid'];
+		if (isset($_POST['https'])) {
+			$bkSecure = 's';
+		} else {
+			$bkSecure = 'n';
+		}
 		$q = $this->db->prepare("UPDATE bookmarks 
-			SET `bk_title` = :bk_title, `bk_url` = :bk_url
+			SET `bk_title` = :bk_title, `bk_url` = :bk_url, `secure` = :secure
 			WHERE bk_id = :bk_id");
 		$q->execute([
 			":bk_title" => $bkTitle,
 			":bk_url" => $bkUrl,
-			":bk_id" => $bkID
+			":bk_id" => $bkID,
+			":secure" => $bkSecure
 			]);
 		header("Location: " . URL . "bookmark");
 	}
